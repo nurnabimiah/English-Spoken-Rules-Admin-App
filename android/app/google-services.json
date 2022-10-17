@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "147713975996",
+    "project_id": "englishspokenrules",
+    "storage_bucket": "englishspokenrules.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147713975996:android:f7044e7a74781df012d2b9",
+        "android_client_info": {
+          "package_name": "com.example.english_spoken_rules_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147713975996-hohoid0rk4ed0uctk9al3tq2c7i77apn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbhlv9hfC9m_qSPaoIG8KDFc-sGl6hYEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "147713975996-hohoid0rk4ed0uctk9al3tq2c7i77apn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
