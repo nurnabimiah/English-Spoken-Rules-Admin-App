@@ -1,4 +1,4 @@
-import 'package:english_spoken_rules_admin/custom_widgets/word_item.dart';
+
 import 'package:english_spoken_rules_admin/pages/insert_word.dart';
 import 'package:english_spoken_rules_admin/providers/word_provider.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +18,7 @@ class _AddtoWordState extends State<AddtoWord> {
 
   @override
   void didChangeDependencies() {
-    _wordProvider = Provider.of<WordProvider>(context,listen: false);
+    _wordProvider = Provider.of<WordProvider>(context,listen: true);
   //  _wordProvider.init();
     super.didChangeDependencies();
   }
@@ -36,46 +36,46 @@ class _AddtoWordState extends State<AddtoWord> {
           itemCount: _wordProvider.wordList.length,
           itemBuilder: (context, index) {
             WordMeaningModel word = _wordProvider.wordList[index];
-            return ListTile(
-              title: Text(word.englishWord!,style: TextStyle(fontSize: 20),),
+            return
+              Stack(
+                children: [
+                   Container(
+                      height: 50,
+                      width: double.infinity,
+                      child: Card(
+                        elevation: 5,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                           children: [
+                             Text(word.englishWord!,style: TextStyle(fontSize: 20),),
+                             SizedBox(width: 10,),
+                             Text('='),
+                             SizedBox(width: 10,),
+                             Text(word.banglaMeaning!,style: TextStyle(fontSize: 20)),
 
+                           ],
 
-            );
-              /*Padding(
-              padding: const EdgeInsets.all(2.0),
-              child: Card(
-                elevation: 8,
-
-
-                  child: Container(
-                    height: 50,
-                    decoration: BoxDecoration(
-                      //color: Colors.brown
-                    ),
-
-
-                    child: Row(
-
-                      children: [
-                        Padding(padding: const EdgeInsets.only(left: 20),
-                          child: Text(word.englishWord!,style: TextStyle(fontSize: 20),),
+                          ),
                         ),
-                        SizedBox(width: 18,),
-                        Text("="),
-                        SizedBox(width: 18,),
-                        Text(word.banglaMeaning!,style: TextStyle(fontSize: 20)),
-                        SizedBox(width: 100,),
-                        IconButton(onPressed: (){},
-                            icon: Icon(Icons.delete))
-
-                      ],
+                      ),
                     ),
 
-                  ),
-                ),
-            );*/
+                  Positioned(
+                    top: 0.5,
+                    bottom: 10,
+                    right: 20,
+                    child: IconButton(
+                           onPressed: (){
+                             _wordProvider.removeFromCart2(word);
+                           },
+                        icon: Icon(Icons.delete)),
+                      )
 
 
+
+                ],
+            );
 
           }),
       floatingActionButton: FloatingActionButton(
@@ -83,14 +83,16 @@ class _AddtoWordState extends State<AddtoWord> {
         onPressed: () {
           Navigator.pushNamed(context, InsertWord.routeName);
         },
-
       ),
-
-
 
     );
 
 
   }
+
+
+
+
 }
+
 

@@ -28,6 +28,11 @@ class DbHelper {
   static Stream<QuerySnapshot<Map<String,dynamic>>>
   fetchAllWord() => _db.collection(_collectionWord).snapshots();
 
-
+  // ekta item k remove korar jonno
+  static Future<void> removeFromCart(String userId,) {
+    return _db.collection(_collectionWord)
+        .doc(userId)
+        .delete();
+  }
 
 }

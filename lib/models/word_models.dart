@@ -30,7 +30,6 @@ class WordMeaningModel {
     wordId :map['wordId'],
     englishWord: map['englishWord'],
     category: map['category'],
-    //category: map['category'] ?.toString()??'',
     banglaMeaning: map['banglaMeaning'],
 
   );

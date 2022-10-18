@@ -27,7 +27,7 @@ class WordProvider extends ChangeNotifier{
 
   void _getAllCategories(){
     DbHelper.getCategories().listen((snapshot) {
-     /* print("0 ...............................................}");
+      /* print("0 ...............................................}");
       print("-1 ...............................................${snapshot.docs[0]}");*/
       categoryList = List.generate(snapshot.docs.length, (index) =>
       snapshot.docs[index].data()['name']);
@@ -35,26 +35,31 @@ class WordProvider extends ChangeNotifier{
       notifyListeners();
 
     });
-   /* print("2.........................}");
+    /* print("2.........................}");
      print(".........................${categoryList}");*/
   }
 
- void _getALlWords(){
-   DbHelper.fetchAllWord().listen((event) {
-     wordList = List.generate(event.docs.length,
-             (index) =>WordMeaningModel.fromMap(event.docs[index].data()));
-     notifyListeners();
-   });
- }
+  void _getALlWords(){
+    DbHelper.fetchAllWord().listen((event) {
+      wordList = List.generate(event.docs.length,
+              (index) =>WordMeaningModel.fromMap(event.docs[index].data()));
+      notifyListeners();
+    });
+  }
 
 
 //insert word
 
-  /*Future<void > insertNewWord (WordMeaningModel wordMeaningModel){
+/*Future<void > insertNewWord (WordMeaningModel wordMeaningModel){
     return DbHelper.addNewWord(wordMeaningModel);
     notifyListeners();
-
   }*/
+
+
+  void removeFromCart2(WordMeaningModel wordMeaningModel) {
+    //cartModel.qty = 0;
+    DbHelper.removeFromCart(wordMeaningModel.wordId!);
+  }
 
 
 }
