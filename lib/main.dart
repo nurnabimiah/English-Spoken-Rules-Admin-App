@@ -3,7 +3,9 @@
 import 'package:english_spoken_rules_admin/models/word_models.dart';
 import 'package:english_spoken_rules_admin/pages/home_page.dart';
 import 'package:english_spoken_rules_admin/pages/insert_word.dart';
-import 'package:english_spoken_rules_admin/pages/spoken_rules_page.dart';
+import 'package:english_spoken_rules_admin/pages/rename_word.dart';
+import 'package:english_spoken_rules_admin/pages/ruleslist_page.dart';
+import 'package:english_spoken_rules_admin/pages/spoken_rules_insert_page.dart';
 import 'package:english_spoken_rules_admin/pages/tense_page.dart';
 import 'package:english_spoken_rules_admin/pages/verb_page.dart';
 import 'package:english_spoken_rules_admin/pages/word_meaning_page.dart';
@@ -20,7 +22,7 @@ void main() async {
   await Firebase.initializeApp();
   runApp(MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => SpokenRulesProvider()),
+        ChangeNotifierProvider(create: (context) => SpokenRulesProvider()..getALlRules()),
         ChangeNotifierProvider(create: (context) => VerbProvider()),
         ChangeNotifierProvider(create: (context) => TenseProvider()),
         ChangeNotifierProvider(create: (context) => WordProvider()),
@@ -47,6 +49,9 @@ class MyApp extends StatelessWidget {
         VerbPage.routeName:(context) => VerbPage(),
         AddtoWord.routeName:(context) => AddtoWord(),
         InsertWord.routeName:(context) => InsertWord(),
+        RenameWord.routeName:(context) => RenameWord(),
+        RulesListPage.routeName:(context) => RulesListPage(),
+
 
       },
     );

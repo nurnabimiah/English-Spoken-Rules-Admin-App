@@ -1,6 +1,7 @@
 
 import 'package:english_spoken_rules_admin/models/word_models.dart';
-import 'package:english_spoken_rules_admin/pages/spoken_rules_page.dart';
+import 'package:english_spoken_rules_admin/pages/ruleslist_page.dart';
+import 'package:english_spoken_rules_admin/pages/spoken_rules_insert_page.dart';
 import 'package:english_spoken_rules_admin/pages/tense_page.dart';
 import 'package:english_spoken_rules_admin/pages/verb_page.dart';
 import 'package:english_spoken_rules_admin/pages/word_meaning_page.dart';
@@ -46,7 +47,7 @@ class _HomePageState extends State<HomePage> {
           ),
           DashboardButton(
             label: 'Spoken Rules',
-            onPressed: () => Navigator.pushNamed(context, SpokenRules.routeName),
+            onPressed: () => Navigator.pushNamed(context, RulesListPage.routeName),
           ),
           DashboardButton(
             label: 'Verb',

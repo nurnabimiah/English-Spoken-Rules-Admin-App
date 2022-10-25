@@ -56,10 +56,14 @@ class WordProvider extends ChangeNotifier{
   }*/
 
 
-  void removeFromCart2(WordMeaningModel wordMeaningModel) {
+  void removeFromWord(WordMeaningModel wordMeaningModel) {
     //cartModel.qty = 0;
-    DbHelper.removeFromCart(wordMeaningModel.wordId!);
+    DbHelper.removeWord(wordMeaningModel.wordId!);
   }
 
+Future<void> updateFromWord(String wordId,WordMeaningModel wordMeaningModel) async {
+    //cartModel.qty = 0;
+    DbHelper.updateWord(wordId, wordMeaningModel);
+  }
 
 }
