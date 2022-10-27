@@ -1,6 +1,6 @@
 
 import 'package:english_spoken_rules_admin/models/word_models.dart';
-import 'package:english_spoken_rules_admin/pages/verb_page.dart';
+import 'package:english_spoken_rules_admin/pages/verblist_page.dart';
 import 'package:english_spoken_rules_admin/pages/word_meaning_page.dart';
 import 'package:english_spoken_rules_admin/providers/word_provider.dart';
 import 'package:flutter/material.dart';

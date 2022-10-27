@@ -34,5 +34,13 @@ class SpokenRulesProvider extends ChangeNotifier{
     DbHelper.removeWord(spokenRulesModel.id!);
   }
 
+  //..................update rules................................
+
+  Future<void> updateFromRules(String id,SpokenRulesModel spokenRulesModel) async {
+    DbHelper.updateRules(id,spokenRulesModel).then((value) => print('User Updated'));
+
+
+  }
+
 
 }

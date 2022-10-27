@@ -7,7 +7,8 @@ import 'package:english_spoken_rules_admin/pages/rename_word.dart';
 import 'package:english_spoken_rules_admin/pages/ruleslist_page.dart';
 import 'package:english_spoken_rules_admin/pages/spoken_rules_insert_page.dart';
 import 'package:english_spoken_rules_admin/pages/tense_page.dart';
-import 'package:english_spoken_rules_admin/pages/verb_page.dart';
+import 'package:english_spoken_rules_admin/pages/verb_insert_page.dart';
+import 'package:english_spoken_rules_admin/pages/verblist_page.dart';
 import 'package:english_spoken_rules_admin/pages/word_meaning_page.dart';
 import 'package:english_spoken_rules_admin/providers/spoken_rules_provider.dart';
 import 'package:english_spoken_rules_admin/providers/tense_provider.dart';
@@ -46,7 +47,8 @@ class MyApp extends StatelessWidget {
         HomePage.routeName:(context) => HomePage(),
         SpokenRules.routeName:(context) => SpokenRules(),
         TensePage.routeName:(context) => TensePage(),
-        VerbPage.routeName:(context) => VerbPage(),
+        VerbListPage.routeName:(context) => VerbListPage(),
+        VerbInsert.routeName:(context) => VerbInsert(),
         AddtoWord.routeName:(context) => AddtoWord(),
         InsertWord.routeName:(context) => InsertWord(),
         RenameWord.routeName:(context) => RenameWord(),

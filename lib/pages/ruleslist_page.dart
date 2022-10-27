@@ -56,6 +56,8 @@ class _RulesListPageState extends State<RulesListPage> {
                     ListTile(
                       leading: CircleAvatar(
                           backgroundColor: const Color(0xff764abc),
+                          //child: Text("${index+1}"),
+                           child: (Text("${index+1}"))
                           ),
                          title: Text(rules.rules!),
                     ),
@@ -77,7 +79,10 @@ class _RulesListPageState extends State<RulesListPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        IconButton(onPressed:(){
+                        IconButton(
+                       icon: Icon(Icons.delete,color: Colors.red,size: 30,),
+
+                            onPressed:(){
                           showDialog(
                               context: context,
                               builder: (context) => AlertDialog(
@@ -103,12 +108,18 @@ class _RulesListPageState extends State<RulesListPage> {
 
                           );
                         },
-                            icon: Icon(Icons.delete,color: Colors.red,size: 30,)),
-                        //SizedBox(width: 20,),
-                        IconButton(onPressed:(){
+                            ),
 
-                        },
-                            icon: Icon(Icons.edit,color: Colors.red,size: 30,)),
+
+
+                        IconButton(
+                            icon: Icon(Icons.edit,color: Colors.red,size: 30,),
+                          onPressed: (){
+                              Navigator.pushReplacementNamed(context, SpokenRules.routeName,arguments: rules.id);
+                          }
+                          ,
+                        ),
+
 
 
                       ],
