@@ -31,7 +31,7 @@ class SpokenRulesProvider extends ChangeNotifier{
 
   void removeFromRules(SpokenRulesModel spokenRulesModel) {
     //cartModel.qty = 0;
-    DbHelper.removeWord(spokenRulesModel.id!);
+    DbHelper.removeRules(spokenRulesModel.id!);
   }
 
   //..................update rules................................

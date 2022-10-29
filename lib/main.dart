@@ -24,7 +24,7 @@ void main() async {
   runApp(MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => SpokenRulesProvider()..getALlRules()),
-        ChangeNotifierProvider(create: (context) => VerbProvider()),
+        ChangeNotifierProvider(create: (context) => VerbProvider()..getALlVerbs()),
         ChangeNotifierProvider(create: (context) => TenseProvider()),
         ChangeNotifierProvider(create: (context) => WordProvider()),
       ],

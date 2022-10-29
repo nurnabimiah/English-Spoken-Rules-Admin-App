@@ -24,7 +24,7 @@ class _RulesListPageState extends State<RulesListPage> {
   @override
   void didChangeDependencies() {
     _spokenRulesProvider = Provider.of<SpokenRulesProvider>(context,listen: true);
-    //  _wordProvider.init();
+
     super.didChangeDependencies();
   }
 

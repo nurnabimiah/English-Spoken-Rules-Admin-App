@@ -102,7 +102,6 @@ static Future<void> addRules (SpokenRulesModel spokenRulesModel) {
 
   //...................................verb Insert..................
 
-// database batch operation
   static Future<void> addNewVerb(VerbModel verbModel){
     final wb = _db.batch();
     final verbDocRef = _db.collection(_collectionVerbs).doc();
@@ -111,5 +110,17 @@ static Future<void> addRules (SpokenRulesModel spokenRulesModel) {
     return wb.commit();
   }
 
+  // ................................fetch all verbs....................
+
+  static Stream<QuerySnapshot<Map<String,dynamic>>>
+  fetchAllVerb() => _db.collection(_collectionVerbs).snapshots();
+
+  // .........................verb item delete.....................
+
+  static Future<void> removeVerbList(String id,) {
+    return _db.collection(_collectionVerbs)
+        .doc(id)
+        .delete();
+  }
 
 }

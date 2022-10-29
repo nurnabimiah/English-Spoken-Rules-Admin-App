@@ -29,13 +29,32 @@ class VerbProvider extends ChangeNotifier{
       notifyListeners();
 
     });
-    /* print("2.........................}");
-     print(".........................${categoryList}");*/
+
   }
 
   Future<void > insertNewVerb (VerbModel verbModel){
     return DbHelper.addNewVerb(verbModel);
   }
+
+  //..........Read all verbs................
+
+  void getALlVerbs(){
+    DbHelper.fetchAllVerb().listen((snapshot) {
+      verbList = List.generate(snapshot.docs.length,
+              (index) =>VerbModel.fromMap(snapshot.docs[index].data()));
+      notifyListeners();
+    });
+  }
+
+  // ..........remove verb By id........
+
+  void removeFromVerbList(VerbModel verbModel) {
+
+    DbHelper.removeVerbList(
+         verbModel.verbId!);
+  }
+
+
 
 
 }
