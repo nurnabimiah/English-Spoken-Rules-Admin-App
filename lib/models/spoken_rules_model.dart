@@ -5,6 +5,7 @@ class SpokenRulesModel {
   String? id;
   int? rulesNumber;
   String? rules;
+  String? structure;
   String? banglaExample1;
   String? englishExample1;
   String? banglaExample2;
@@ -20,6 +21,7 @@ class SpokenRulesModel {
   SpokenRulesModel({ this.id,
     this.rulesNumber,
     this.rules,
+    this.structure,
     this.banglaExample1,
     this.englishExample1,
     this.banglaExample2,
@@ -36,6 +38,7 @@ class SpokenRulesModel {
       'id': id,
       'rulesNumber': rulesNumber,
       'rules': rules,
+      'structure': structure,
       'banglaExample1': banglaExample1,
       'englishExample1': englishExample1,
       'banglaExample2': banglaExample2,
@@ -56,6 +59,7 @@ class SpokenRulesModel {
     id :map['id'],
     rulesNumber : map['rulesNumber'],
     rules: map['rules'],
+    structure: map['structure'],
     banglaExample1: map['banglaExample1'],
     englishExample1: map['englishExample1'],
     banglaExample2: map['banglaExample2'],

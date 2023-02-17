@@ -41,7 +41,7 @@ class _RulesListPageState extends State<RulesListPage> {
 
     return Scaffold(
       appBar: AppBar(title: Text('Rules List '),),
-      body: _spokenRulesProvider.rulesdList.isEmpty ? Center(child: Text('You have no data insert data'),
+      body: _spokenRulesProvider.rulesdList.isEmpty ? Center(child: CircularProgressIndicator(),
       ):ListView.builder(
 
           itemCount: _spokenRulesProvider.rulesdList.length,
@@ -60,6 +60,7 @@ class _RulesListPageState extends State<RulesListPage> {
                            child: (Text("${index+1}"))
                           ),
                          title: Text(rules.rules!),
+                         subtitle: Text(rules.structure!),
                     ),
                     ListTile(
                       title: Text(rules.banglaExample1!),

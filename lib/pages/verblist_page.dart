@@ -1,4 +1,4 @@
-import 'package:english_spoken_rules_admin/models/spoken_rules_model.dart';
+
 import 'package:english_spoken_rules_admin/models/verb_model.dart';
 import 'package:english_spoken_rules_admin/pages/verb_insert_page.dart';
 import 'package:english_spoken_rules_admin/providers/verb_provider.dart';
@@ -43,9 +43,9 @@ class _VerbListPageState extends State<VerbListPage> {
               child: Table(
 
                 columnWidths: {
-                  0:FractionColumnWidth(0.37),
-                  1:FractionColumnWidth(0.31),
-                  2:FractionColumnWidth(0.32),
+                  0:FractionColumnWidth(0.40),
+                  1:FractionColumnWidth(0.30),
+                  2:FractionColumnWidth(0.30),
                 },
                 border: TableBorder.all(
                   color: Colors.black,
@@ -84,15 +84,17 @@ class _VerbListPageState extends State<VerbListPage> {
                       itemBuilder: (context,index){
                         VerbModel verbs = _verbProvider.verbList[index];
                         */
-                       ListView(
+                       ListView.builder(
                          shrinkWrap: true,
-                         children: _verbProvider.verbList.map((verbs){
+                         itemCount: _verbProvider.verbList.length,
+                         itemBuilder: (context,index){
+                           VerbModel verbs = _verbProvider.verbList[index];
                            return Table(
                              //defaultColumnWidth: FixedColumnWidth(120.0),
                                columnWidths: {
-                                 0:FractionColumnWidth(0.37),
-                                 1:FractionColumnWidth(0.31),
-                                 2:FractionColumnWidth(0.32),
+                                 0:FractionColumnWidth(0.40),
+                                 1:FractionColumnWidth(0.30),
+                                 2:FractionColumnWidth(0.30),
                                },
                                border: TableBorder.all(
                                  color: Colors.deepOrange,
@@ -103,19 +105,32 @@ class _VerbListPageState extends State<VerbListPage> {
                                children: [
                                  TableRow(
                                      children: [
-                                       /*TableCell(child: Container(
-                                     //color: Colors.greenAccent,
-                                     child: Center(
-                                       child: Text(verbs.presentForm!,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
-                                     ) ,
-                                   ))*/
+
 
                                        TableCell(child: Container(
                                          child: Column(
+
                                            children: [
-                                             Text(verbs.presentForm!,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
-                                             Text(verbs.banglaMeaning!)
-                                             ,
+                                             Row(
+                                               children: [
+                                                 Padding(
+                                                   padding: const EdgeInsets.all(8.0),
+                                                   child: CircleAvatar(
+                                                       maxRadius: 13,
+                                                       child: Text('${index+1}',
+                                                         style: TextStyle(fontSize: 13),)),
+                                                 ),
+                                                 SizedBox(),
+                                                 Center(child: Text(verbs.presentForm!,style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),textAlign: TextAlign.center)),
+
+                                               ],
+                                             ),
+
+                                             Text(verbs.banglaMeaning!,style: TextStyle(fontSize: 15,color: Colors.purpleAccent),)
+
+
+
+
                                            ],
 
                                          ),
@@ -176,14 +191,11 @@ class _VerbListPageState extends State<VerbListPage> {
                                ]
 
                            );
-                         }).toList(),
+                         },
+
 
       )
-                   /*
-                   for builder
 
-                      })
-                    */
 
               ),
             ),

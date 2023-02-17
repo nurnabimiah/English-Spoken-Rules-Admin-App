@@ -18,6 +18,7 @@ class _SpokenRulesState extends State<SpokenRules> {
 
   final _rulesNumberController = TextEditingController();
   final _rulesController = TextEditingController();
+  final _stractureController = TextEditingController();
   final _banExampleController1 = TextEditingController();
   final _englishExampleController1 = TextEditingController();
   final _banExampleController2 = TextEditingController();
@@ -42,8 +43,9 @@ class _SpokenRulesState extends State<SpokenRules> {
 
   @override
   void dispose() {
-    //_rulesNumberController.dispose();
+    _rulesNumberController.dispose();
     _rulesController.dispose();
+    _stractureController.dispose();
     _banExampleController1.dispose();
     _englishExampleController1.dispose();
 
@@ -108,6 +110,30 @@ class _SpokenRulesState extends State<SpokenRules> {
                 // controller diye value golo newa hoy
                 decoration: InputDecoration(
                   labelText: 'Rules',
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15)),
+
+
+                ),
+                maxLines: 5,
+                minLines: 1,
+
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'This filed must not be empty';
+                  }
+
+                  return null; // jodi user kiso type kre thake
+                },
+
+
+              ),
+              SizedBox(height: 10,),
+              TextFormField(/*joto gola filed thakbe totho gola controller banaite hobe*/
+                controller:  _stractureController,
+                // controller diye value golo newa hoy
+                decoration: InputDecoration(
+                  labelText: 'Structure',
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15)),
 
@@ -397,6 +423,7 @@ class _SpokenRulesState extends State<SpokenRules> {
       final rules = SpokenRulesModel(
         rulesNumber: int.parse(_rulesNumberController.text),
         rules: _rulesController.text,
+        structure: _stractureController.text,
         banglaExample1: _banExampleController1.text,
         englishExample1: _englishExampleController1.text,
 

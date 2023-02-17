@@ -42,9 +42,6 @@ class _InsertWordState extends State<InsertWord> {
         .of(context)!
         .settings
         .arguments as String?;
-    //final wordId = wId[0];
-    print("insert 1 ...............................................}");
-    print("insert 2 ...............................................+ ${wId}");
     return Scaffold(
       appBar: AppBar(
         title: Text('Insert Word'),
@@ -138,7 +135,7 @@ class _InsertWordState extends State<InsertWord> {
 
   void _saveWord() {
    if(wId == null){
-     print("insert 3 ...............................................+ ${wId}");
+
      if (_formkey.currentState!.validate()) {
        _formkey.currentState!.save();
        _wordProvider.insertNewWord(_wordMeaningModel).then((value) {
@@ -147,7 +144,6 @@ class _InsertWordState extends State<InsertWord> {
      }
    }
     else {
-     print("insert 4 ...............................................+ ${wId}");
      if (_formkey.currentState!.validate()) {
        _formkey.currentState!.save();
        _wordProvider.updateFromWord(wId!, _wordMeaningModel).then((value) {
