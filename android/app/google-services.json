@@ -1,36 +1,45 @@
 {
   "project_info": {
-    "project_number": "147713975996",
-    "project_id": "englishspokenrules",
-    "storage_bucket": "englishspokenrules.appspot.com"
+    "project_number": "876138002975",
+    "project_id": "daily-learn-english-therapy",
+    "storage_bucket": "daily-learn-english-therapy.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:147713975996:android:f7044e7a74781df012d2b9",
+        "mobilesdk_app_id": "1:876138002975:android:9415152e2f056dca97f32a",
         "android_client_info": {
-          "package_name": "com.example.english_spoken_rules_admin"
+          "package_name": "com.dailylearnenglishtherapy.app"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "147713975996-hohoid0rk4ed0uctk9al3tq2c7i77apn.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDbhlv9hfC9m_qSPaoIG8KDFc-sGl6hYEc"
+          "current_key": "AIzaSyBWvYOGlhiXJ623BLAjahoBK-TRwpMoUNo"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "147713975996-hohoid0rk4ed0uctk9al3tq2c7i77apn.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876138002975:android:f16008c10930003697f32a",
+        "android_client_info": {
+          "package_name": "com.dailylearnenglishtherapyadminpanel.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWvYOGlhiXJ623BLAjahoBK-TRwpMoUNo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
         }
       }
     }
